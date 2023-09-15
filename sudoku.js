@@ -11,13 +11,46 @@ function read() {
     .split(`${EOL}`);
   return strMain[0];
 }
-function getString(strMain) {
+function getString(read) {
   let arr = [];
-  for (let i = 0; i < strMain.length; i++) {
-    arr.push(strMain.slice(9 * i, 9 * (i + 1)));
+  for (let i = 0; i < 9; i++) {
+    arr.push(read.slice(9 * i, 9 * (i + 1)));
   }
   return arr;
 }
+
+function checkStr(str){
+  str = str.split('')
+  for (let i = 0; i < str.length; i++) {
+    if(str[i] === '-'){
+      for (let j = 1; j < 10; j++) {
+        if(!str.includes(j.toString())){
+          str[i] = j.toString()
+        }
+      }
+    }
+  }
+  return str;
+}
+
+// console.log(checkStr(getString(read())));
+
+function getColumn(read) {
+  let res = []
+  for (let i = 0; i < read.length; i++) {
+    let temp = []
+    for (let j = 0; j < read.length; j++) {
+      temp.push(read[j][i])
+    }
+    res.push(temp.join(''))
+  }
+  return res;
+}
+console.log(getString(read()));
+console.log(getColumn(getString(read())));
+
+//console.log(getString(read()));
+//console.log(getColumn(read()));
 
 function solve() {
   /**
