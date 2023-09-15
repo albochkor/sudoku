@@ -5,9 +5,13 @@ function read() {
 
   const dirPath = path.join(__dirname);
 
-  const strMain = fs.readFileSync(dirPath + "/puzzles.txt", "utf-8");
+  const strMain = fs
+    .readFileSync(dirPath + "/puzzles.txt", "utf-8")
+    .trim()
+    .split(`${EOL}`);
   return strMain;
 }
+console.log(read());
 function solve() {
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции read.
