@@ -8,12 +8,23 @@ function read() {
   const strMain = fs.readFileSync(dirPath + "/puzzles.txt", "utf-8");
   return strMain;
 }
+
+function getString(strMain){
+  let arr = []
+  for (let i = 0; i < strMain.length; i++) {
+    arr.push(strMain.slice(9 * i, 9 * (i + 1)))
+  }
+  return arr
+}
+
+console.log(getString(read()));
 function solve() {
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции read.
    * Возвращает игровое поле после попытки его решить.
    */
 }
+
 
 function isSolved() {
   /**
