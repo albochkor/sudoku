@@ -9,17 +9,15 @@ function read() {
     .readFileSync(dirPath + "/puzzles.txt", "utf-8")
     .trim()
     .split(`${EOL}`);
-  return strMain;
+  return strMain[0];
 }
-
-function getString(strMain){
-  let arr = []
+function getString(strMain) {
+  let arr = [];
   for (let i = 0; i < strMain.length; i++) {
-    arr.push(strMain.slice(9 * i, 9 * (i + 1)))
+    arr.push(strMain.slice(9 * i, 9 * (i + 1)));
   }
-  return arr
+  return arr;
 }
-
 
 function solve() {
   /**
@@ -27,7 +25,6 @@ function solve() {
    * Возвращает игровое поле после попытки его решить.
    */
 }
-
 
 function isSolved() {
   /**
